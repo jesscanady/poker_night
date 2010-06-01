@@ -1,7 +1,8 @@
 require 'digest/md5'
 
 class User < ActiveRecord::Base
-  has_many :games
+  has_many :records
+  has_many :games, :through => :records
   
   
   validates_length_of :password, :minimum => 3
