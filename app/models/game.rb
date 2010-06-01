@@ -1,4 +1,6 @@
 class Game < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :night
+  has_many :records
+  has_many :users, :through => :records
+    
+  validates_presence_of :when
 end
