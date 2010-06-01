@@ -1,13 +1,13 @@
-require 'digest/md5'
-
-Facrory.define(:user) do |u|
-  u.name 'Captain Hook'
-  u.email 'hook@neverland.org'
-  u.hashed_password { Digest::MD5.hexdigest('IH8PeterPan') } 
+Factory.define(:user) do |u|
+  u.sequence(:name) { |n| "user#{n}" } 
+  u.sequence(:email) { |n| "user#{n}@example.com" }
+  u.password 'IH8PeterPan'
+  u.password_confirmation 'IH8PeterPan'
 end
 
 Factory.define(:admin, :class => User) do |u|
-  u.name 'Henry Case'
-  u.email 'case@neuromancer.biz'
-  u.hashed_password { Digest::MD5.hexdigest('Winter:!:Mute') }
+  u.sequence(:name) { |n| "admin#{n}" } 
+  u.sequence(:email) { |n| "admin#{n}@example.com" }
+  u.password 'Winter:!:Mute'
+  u.password_confirmation 'Winter:!:Mute'
 end

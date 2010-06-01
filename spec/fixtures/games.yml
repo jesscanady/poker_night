@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  player_id: 1
+  night_id: 1
+  buyin: 1
+  winnings: 1
+  place: 1
+
+two:
+  player_id: 1
+  night_id: 1
+  buyin: 1
+  winnings: 1
+  place: 1
