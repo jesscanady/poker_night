@@ -3,6 +3,7 @@ require 'digest/md5'
 class User < ActiveRecord::Base
   has_many :records
   has_many :games, :through => :records
+  has_many :won_games, :through => :records, :source => :game, :class_name => 'Game', :conditions => ['place = ?', 1]
   
   
   validates_length_of :password, :minimum => 3
@@ -36,8 +37,8 @@ class User < ActiveRecord::Base
   
   # ranking 
   
-  def won_games
-    games(:conditions => ['place = ?', 1])
-  end
-  
+  # def won_games
+  #   records(:conditions => ['place = ?', 1])
+  # end
+  # 
 end
