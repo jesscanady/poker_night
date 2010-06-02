@@ -9,10 +9,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100601025524) do
+ActiveRecord::Schema.define(:version => 20100602011103) do
 
   create_table "games", :force => true do |t|
-    t.datetime "when"
+    t.datetime "scheduled_for"
     t.boolean  "active"
     t.integer  "winner_id"
     t.datetime "created_at"

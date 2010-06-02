@@ -1,4 +1,4 @@
 Factory.define(:game) do |g|
-  g.when { Time.now }
+  g.scheduled_for { Time.now }
   g.active false
 end
