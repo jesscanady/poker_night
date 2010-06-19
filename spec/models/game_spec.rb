@@ -30,7 +30,7 @@ describe Game do
       @last_game.records << Factory(:record, :place => 1, :user => Factory(:user, :id => 5), :game => @last_game)
     end
     
-    it "should rank players easily and properly" do
+    it "should rank players given placed rankings" do
       @last_game.players.ranked.map(&:id).should == [5,4,3,2,1]
     end
   end
