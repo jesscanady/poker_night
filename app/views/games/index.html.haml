@@ -1,0 +1,12 @@
+%h2 Last time
+- unless @last_game.nil?
+  - # list players
+- else
+  %p Looks like we haven't played yet.
+  
+%h2 Next time
+- unless @upcoming_game.nil?
+  - # list date
+- else
+  %p The next game hasn't been scheduled yet.   
+    
