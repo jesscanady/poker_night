@@ -1,12 +1,14 @@
-%h2 Last time
-- unless @last_game.nil?
-  - # list players
-- else
-  %p Looks like we haven't played yet.
+%h1 Poker Night
+
+
+- if @upcoming_game
+  %h2 Upcoming
+  = render :partial => 'game', :locals => {:game => @upcoming_game}
+
+- if @previous_game
+  %h2 Last Game
+  = render :partial => 'game', :locals => {:game => @previous_game}
+
+
+%h2 Previous Games
   
-%h2 Next time
-- unless @upcoming_game.nil?
-  - # list date
-- else
-  %p The next game hasn't been scheduled yet.   
-    

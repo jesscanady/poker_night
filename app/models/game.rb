@@ -7,7 +7,8 @@ class Game < ActiveRecord::Base
   end
     
   validates_presence_of :scheduled_for
-  
+
+  # active games are games with enough RSVPs to count as "definitely on"
   named_scope :active, :conditions => {:active => true}
   
   def self.previous
@@ -16,6 +17,12 @@ class Game < ActiveRecord::Base
   
   def self.upcoming
     active.find(:first, :conditions => ['scheduled_for >= ?', Time.now])
+  end
+
+
+
+  def date
+    scheduled_for.to_s
   end
   
 end
