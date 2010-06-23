@@ -30,12 +30,6 @@
 .grid_10 {
   width: 690px; }
 
-.grid_11 {
-  width: 760px; }
-
-.grid_12 {
-  width: 830px; }
-
 .column {
   margin: 0 5px;
   overflow: hidden;
@@ -43,7 +37,7 @@
   display: inline; }
 
 .row {
-  width: 840px;
+  width: 700px;
   margin: 0 auto;
   overflow: hidden; }
   .row .row {
@@ -52,4 +46,7 @@
     display: inline-block; }
 
 body {
-  font-family: verdana; }
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+.game {
+  font-size: 1.5em; }
