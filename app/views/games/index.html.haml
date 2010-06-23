@@ -1,15 +1,15 @@
-%h1 Poker Night
-
-
 - if @upcoming_game
-  %h2 Upcoming
-  = render :partial => 'game', :locals => {:game => @upcoming_game}
-
+  #upcoming_game.game_list
+    %h2 Upcoming
+    = render :partial => 'game', :locals => {:game => @upcoming_game}
+    
 - if @previous_game
-  %h2 Last Game
-  = render :partial => 'game', :locals => {:game => @previous_game}
+  #last_game.game_list
+    %h2 Last Game
+    = render :partial => 'game', :locals => {:game => @previous_game}
 
 
 - if @previous_game_list.count
+  #previous_games.game_list
   %h2 Previous Games
   = render :partial => 'game', :collection => @previous_game_list
