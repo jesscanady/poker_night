@@ -1,3 +1,4 @@
 .game
-  %span.date game.date
+  %span.winner= "#{game.winner.name} took first on " if game.winner 
+  %span.date= game.date
 

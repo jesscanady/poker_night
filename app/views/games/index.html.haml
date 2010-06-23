@@ -10,5 +10,6 @@
   = render :partial => 'game', :locals => {:game => @previous_game}
 
 
-%h2 Previous Games
-  
+- if @previous_game_list.count
+  %h2 Previous Games
+  = render :partial => 'game', :collection => @previous_game_list
