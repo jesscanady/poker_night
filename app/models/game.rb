@@ -5,13 +5,17 @@ class Game < ActiveRecord::Base
       all(:order => 'place ASC')
     end
   end
+  belongs_to :winner, :class_name => 'User', :foreign_key => 'winner_id'
     
   validates_presence_of :scheduled_for
 
   # active games are games with enough RSVPs to count as "definitely on"
   named_scope :active, :conditions => {:active => true}
-  
-  def self.previous
+  named_scope :previous, lambda {
+    { :conditions => ['scheduled_for <= ?', Time.now] }
+  }
+
+  def self.last_played
     active.find(:first, :conditions => ['scheduled_for <= ?', Time.now])
   end
   
@@ -22,7 +26,7 @@ class Game < ActiveRecord::Base
 
 
   def date
-    scheduled_for.to_s
+    scheduled_for.to_date.to_s(:long)
   end
   
 end
