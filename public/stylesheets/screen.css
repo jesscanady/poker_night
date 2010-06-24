@@ -62,7 +62,7 @@ body {
   z-index: 4;
   /* background-color: rgba(0, 255, 0, 0.5) */
   /* filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#7F00FF00', EndColorStr='#7F00FF00') */
-  padding: 1em;
+  padding: 3em;
   border: 1px solid rgba(0,0,0,0.5);
   border-radius: 10px 10px 2px 2px;
   background: rgba(0,0,0,0.50);
@@ -71,10 +71,20 @@ body {
   -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
   -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3); }
   #content h2 {
-    margin: .25em 0; }
+    margin: .25em 0;
+    font-weight: normal; }
+
+.previous_games {
+  width: 100%; }
 
 .game_list {
   margin-bottom: 1em; }
 
-.game {
+.game, .game_min {
   font-size: 1.5em; }
+  .game p, .game_min p {
+    margin: 0; }
+  .game .label, .game_min .label {
+    text-align: left; }
+  .game .stats, .game_min .stats {
+    /* text-align: left */ }

@@ -28,5 +28,9 @@ class Game < ActiveRecord::Base
   def date
     scheduled_for.to_date.to_s(:long)
   end
+
+  def time
+    scheduled_for.to_time.to_s(:time)
+  end
   
 end

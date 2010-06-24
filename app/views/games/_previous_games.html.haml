@@ -1,0 +1,9 @@
+%table.previous_games
+  %tr
+    %th Date
+    %th WinRAR!
+  - games.each do |game|
+    %tr
+      %td= game.date
+      %td= game.winner.name
+
