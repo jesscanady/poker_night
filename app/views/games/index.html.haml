@@ -1,18 +1,16 @@
 .row
-  .column.grid_5
+  .column.grid_9
+
+    %h2 Next Game
+
     - if @upcoming_game
-      #upcoming_game.game_list
-      = render :partial => 'current_game', :locals => {:game => @upcoming_game}
+      %p= "#{@upcoming_game.date} at #{@upcoming_game.time}"
+    - else
+      %p No game scheduled yet
 
-  .column.grid_5
-    - if @previous_game
-      #last_game.game_list
-      = render :partial => 'previous_game', :locals => {:game => @previous_game}
 
-.row
-  .column.grid_10
-    - if @previous_game_list.count
+    - if @previous_games.count
       #previous_games.game_list
-      %h2 PREVIOUS GAMES
-      = render :partial => 'previous_games', :locals => {:games => @previous_game_list}
+        %h2 Winners
+        = render :partial => 'previous_games', :locals => {:games => @previous_games}
 

@@ -1,9 +1,9 @@
 %table.previous_games
   %tr
-    %th Date
-    %th WinRAR!
-  - games.each do |game|
-    %tr
+    -# %th Date
+    -# %th WinRAR!
+  - games.each_with_index do |game,i|
+    %tr{:class => cycle('', 'alt')}
       %td= game.date
       %td= game.winner.name
 

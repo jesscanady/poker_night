@@ -4,8 +4,7 @@ class GamesController < ApplicationController
     @upcoming_game = Game.upcoming
     
     # the last game played, and the previous 10
-    @previous_game_list = Game.active.previous(:limit => 11)
-    @previous_game = @previous_game_list.shift
+    @previous_games = Game.active.previous(:limit => 11)
   end
   
 end
