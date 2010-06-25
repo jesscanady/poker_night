@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Game do
   
-  context "Announcements" do
+  context "date handlers" do
 
     before(:each) do
       @upcoming_game = Factory(:game, :scheduled_for => Time.now + 1.week, :active => true)
@@ -12,11 +12,15 @@ describe Game do
     end
 
     it "should fetch the latest game" do 
-      Game.previous.should == @last_game
+      Game.last_played.should == @last_game
     end
     
     it "should fetch the upcoming game" do
       Game.upcoming.should == @upcoming_game
+    end
+
+    it "should fetch all previously played games, in date order" do
+      Game.previous.should == [@last_game, @older_game, @cancelled_game]
     end
   end
   
