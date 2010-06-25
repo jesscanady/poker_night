@@ -1,0 +1,13 @@
+%h1 Games
+
+%p= link_to 'New game', new_admin_game_path
+
+%table
+  %tr
+    %th Game Date
+    %th 
+  - @games.each do |game|
+    %tr
+      %td= link_to game.date, admin_game_path(game)
+      %td= link_to 'edit', edit_admin_game_path(game)
+      %td= link_to 'destroy', admin_game_path(game), :confirm => "What really?", :method => :delete
