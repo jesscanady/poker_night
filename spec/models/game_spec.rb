@@ -1,6 +1,15 @@
 require 'spec_helper'
 
 describe Game do
+
+  context "validations" do
+
+    it { should validate_presence_of(:scheduled_for) }
+    it { should have_many(:records) }
+    it { should belong_to(:winner) }
+    it { should have_many(:players) }
+    
+  end
   
   context "date handlers" do
 
