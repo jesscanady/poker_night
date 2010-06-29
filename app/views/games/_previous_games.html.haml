@@ -5,5 +5,5 @@
   - games.each_with_index do |game,i|
     %tr{:class => cycle('', 'alt')}
       %td= game.date
-      %td= game.winner.name
+      %td= game.winner.andand.name || 'No Winner'
 
