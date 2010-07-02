@@ -4,6 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :games
 
   map.namespace :admin do |admin|
+    admin.root :controller => "games"
     admin.resources :games
   end
   
