@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100602011103) do
+ActiveRecord::Schema.define(:version => 20100705191850) do
 
   create_table "games", :force => true do |t|
     t.datetime "scheduled_for"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20100602011103) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin"
+    t.string   "remember_token"
   end
 
 end

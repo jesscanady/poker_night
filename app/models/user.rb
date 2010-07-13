@@ -13,7 +13,8 @@ class User < ActiveRecord::Base
   
   attr_protected :id
   attr_accessor :password, :password_confirmation
-  
+
+  before_create :generate_remember_token
   
   def password=(newpass)
     @password = newpass
@@ -21,8 +22,8 @@ class User < ActiveRecord::Base
   end
   
   
-  def self.authenticate(email, pass)
-    find_by_email_and_hashed_password(email, encrypt(pass))
+  def self.authenticate_as_admin(email, pass)
+    find_by_email_and_hashed_password(email, encrypt(pass), :conditions => {:admin => true})
   end
   
   def self.encrypt(string)
@@ -31,6 +32,11 @@ class User < ActiveRecord::Base
     # realer projects use salted SHA256
     # realest projects use bcrypt
     Digest::MD5.hexdigest(string)
+  end
+
+
+  def generate_remember_token
+    self.remember_token = User.encrypt("--#{Time.now.utc}--#{hashed_password}--#{id}--#{rand}--")
   end
   
   
