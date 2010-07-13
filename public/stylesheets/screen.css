@@ -54,9 +54,9 @@ body {
 
 #content {
   background: #fdfdf8;
-  box-shadow: 0 0 50px #cccccc;
-  -moz-box-shadow: 0 0 50px #cccccc;
-  -webkit-box-shadow: 0 0 50px #cccccc;
+  box-shadow: 0 0 50px #444444;
+  -moz-box-shadow: 0 0 50px #444444;
+  -webkit-box-shadow: 0 0 50px #444444;
   background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#cccccc), to(white));
   background: -moz-linear-gradient(0% 40% 90deg, white, #cccccc);
   /* color: #DBDBDB */
