@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
   validates_confirmation_of :password
   
-  attr_protected :id
+  attr_protected :id, :admin, :remember_token, :hashed_password
   attr_accessor :password, :password_confirmation
 
   before_create :generate_remember_token

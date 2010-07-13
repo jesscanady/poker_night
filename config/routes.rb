@@ -6,6 +6,8 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
     admin.root :controller => "games"
     admin.resources :games
+    admin.resources :users
+    admin.resource :session
   end
   
   map.root :controller => "games"

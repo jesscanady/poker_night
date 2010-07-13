@@ -1,5 +1,6 @@
 class Admin::GamesController < ApplicationController
 
+  before_filter :require_admin
   layout 'admin'
   
   def index
@@ -17,7 +18,7 @@ class Admin::GamesController < ApplicationController
   def create
     @game = Game.new(params[:game])
     if (@game.save)
-      flash[:notice] = 'Successfully updated game.'
+      flash[:notice] = 'Successfully created game.'
       redirect_to admin_games_path
     else
       render :action => 'new'

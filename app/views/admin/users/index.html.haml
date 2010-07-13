@@ -1,0 +1,14 @@
+%h1 Users
+
+%p= link_to 'New User', new_admin_user_path
+
+%table
+  %tr
+    %th Name
+    - @users.each do |user|
+      %tr
+        %td= link_to user.name, admin_user_path(user)
+        %td= link_to 'edit', edit_admin_user_path(user)
+        %td= link_to 'delete', admin_user_path(user), :method => :destroy, :confirm => 'Really destroy? This will probably cause problems.'
+
+    
