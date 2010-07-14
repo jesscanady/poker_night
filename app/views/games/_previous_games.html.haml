@@ -4,6 +4,7 @@
     -# %th WinRAR!
   - games.each_with_index do |game,i|
     %tr{:class => cycle('', 'alt')}
-      %td= game.date
-      %td= game.winner.andand.name || 'No Winner'
+      %td.name= game.winner.andand.name || '(no winner)'
+      %td.date= game.date
+
 
